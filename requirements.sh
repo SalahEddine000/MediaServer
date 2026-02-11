@@ -56,8 +56,9 @@ echo "Setting up Home Server Directory..."
 echo "The Directory will be created at ~/media/Arr/ and will be used for all ARR apps."
 echo "----------------------------------------------------"
 
-sudo mkdir -p ~/media/Arr/
-sudo chown -R 1000:1000 ~/media/Arr/
+sudo mkdir -p /data/{torrents/{tv,movies,music},media/{tv,movies,music}}
+sudo chown -R 1000:1000 /data
+sudo chmod -R a=,a+rX,u+w,g+w /data
 
 echo "----------------------------------------------------"
 echo "Done! You are ready to go!"
