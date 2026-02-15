@@ -59,20 +59,6 @@ services:
       - /docker/appdata/lidarr:/config
       - /data:/data
 
-###############################################
-# BAZARR - Subtitles
-###############################################
-
-  bazarr:
-    <<: *common-keys
-    container_name: bazarr
-    image: ghcr.io/hotio/bazarr:latest
-    ports:
-      - 6767:6767
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/bazarr:/config
-      - /data/media:/data/media
 
 ###############################################
 # PROWLARR - Indexer Manager
