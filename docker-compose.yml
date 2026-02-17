@@ -9,7 +9,7 @@ x-common-keys: &common-keys
     environment:
       PUID: 1000
       PGID: 1000
-      TZ: Europe/London
+      TZ: Africa/Casablanca
     dns:
       - 1.1.1.1
       - 1.0.0.1
@@ -122,6 +122,19 @@ services:
     restart: unless-stopped
     ports:
       - 8191:8191
+
+
+###############################################
+# JellySeerr - Request Management
+###############################################
+  jellyseerr:
+    container_name: jellyseerr
+    image: fallenbagel/jellyseerr:latest
+    restart: unless-stopped
+    ports:
+      - 5055:5055
+    volumes:
+      - /docker/appdata/jellyseerr:/app/config
 
 ###############################################
 # ARR Stack Dedicated Network
